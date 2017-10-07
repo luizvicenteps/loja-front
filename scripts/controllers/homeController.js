@@ -4,16 +4,6 @@ angular.module("lojaApp").controller("homeCtrl",["$scope","$uibModal","listaProd
     $scope.produtoModel = listaProdutosFactory;
 
     $scope.buscarProdutos = function (){
-        // $scope.produtoModel.produtos = [
-        //     {
-        //         "Id": 1,
-        //         "Nome": "mouse usb",
-        //         "ImageUrl": "http://placehold.it/500x400",
-        //         "Valor": 25.00,
-        //         "Descricao": "Look, just because I don't be givin'" 
-        //     }           
-        // ];
-
         produtoService.listarProdutos()
         .then(function(retorno){
             $scope.produtoModel.produtos = retorno.data;
@@ -23,9 +13,24 @@ angular.module("lojaApp").controller("homeCtrl",["$scope","$uibModal","listaProd
         })
     };
 
-    $scope.editarProduto = function (item){
+    $scope.detalheProduto = function (item){
         $uibModal.open({
             templateUrl: "views/detalheProduto.html",
+            controller: "produtoCtrl",
+            size: "bg",
+            backdrop: "static",
+            resolve: {
+                item: function (){
+                    return item;
+                }
+            }
+        });
+    };
+
+    $scope.editarProduto = function (item){
+        //$uibModal.close();
+        $uibModal.open({
+            templateUrl: "views/editarProduto.html",
             controller: "produtoCtrl",
             size: "bg",
             backdrop: "static",

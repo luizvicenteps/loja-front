@@ -1,33 +1,33 @@
 angular.module("lojaApp").service("produtoService", ["$http",function($http){
 
 return {
-    adicionarProduto: function (produto) {
+    adicionarProduto: function (item) {
 
         return $http({
             url: HOST_API,
             method: "POST",
-            data: produto,
+            data: item,
             headers: {
                 "Content-Type": "application/json"
             }
         });
     },
 
-    editarProduto: function (produto) {
-        var url = HOST_API + produto.Id;
+    editarProduto: function (item) {
+        var url = HOST_API + item.Id;
 
         return $http({
             url: url,
             method: "PUT",
-            data: produto,
+            data: item,
             headers: {
                 "Content-Type": "application/json"
             }
         });
     },
 
-    removerProduto: function (produtoId) {
-        var url = HOST_API + produtoId;
+    removerProduto: function (itemId) {
+        var url = HOST_API + itemId;
 
         return $http({
             url: url,

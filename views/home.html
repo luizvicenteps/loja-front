@@ -14,7 +14,7 @@
   		<div class="col-md-3 col-sm-6" ng-repeat="item in produtoModel.produtos">
     		<span class="thumbnail">
       			<img ng-src="{{item.ImageUrl}}" alt="...">
-      			<h4>Product Tittle</h4>
+      			<h4>{{item.Nome}}</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
@@ -29,11 +29,9 @@
       					<p class="price">${{item.Valor}}</p>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-success left" ng-click="editarProduto(item)"> Editar</button>
+      					<button class="btn btn-success left" ng-click="detalheProduto(item)"> Detalhes</button>
 							</div>
-							<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-success right" ng-click="removerProduto(item.Id)">Remover</button>								
-							</div>
+							
       				
       			</div>
     		</span>
