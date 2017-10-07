@@ -20,7 +20,6 @@ function($scope,$uibModalInstance, $uibModal, item, listaProdutosFactory, produt
     /* Abrir Modal para edição*/
 
     $scope.modalEditarProduto = function (item){
-        //$uibModal.close();
         $uibModal.open({
             templateUrl: "views/editarProduto.html",
             controller: "produtoCtrl",
