@@ -17,7 +17,6 @@ function($scope,$uibModalInstance, $uibModal, item, listaProdutosFactory, produt
         )
 
     }
-    /* Abrir Modal para edição*/
 
     $scope.modalEditarProduto = function (item){
         $uibModal.open({
@@ -37,11 +36,8 @@ function($scope,$uibModalInstance, $uibModal, item, listaProdutosFactory, produt
         produtoService.removerProduto(item.Id)
         .then(
             function(){
-                console.log("Antes Index");
                 var index = listaProdutosFactory.produtos.indexOf(item);
-                console.log("Antes splice");
                 listaProdutosFactory.produtos.splice(index,1);
-                console.log("Depois");
                 toastr.success('Produto Removido com Sucesso!');
                 $scope.fecharModal();
             })
@@ -52,16 +48,39 @@ function($scope,$uibModalInstance, $uibModal, item, listaProdutosFactory, produt
         )
 
     }
-    
+
+    $scope.modalRemoverProduto = function (item){
+        $scope.fecharModal();
+        $uibModal.open({
+            templateUrl: "views/modalExlusaoProduto.html",
+            controller: "produtoCtrl",
+            size: "",
+            backdrop: "static",
+            resolve: {
+                item: function (){
+                    return item;
+                }
+            }
+        });
+    };
+
     $scope.adicionarProduto = function(item){
         produtoService.adicionarProduto(item)
         .then(
-            function(){
-                toastr.sucess('Produto Inserido com Sucesso!');
+            function(response){
+                item.Id = response.data.Id
+                listaProdutosFactory.produtos.push(item)
+                toastr.success('Produto Inserido com Sucesso!');
                 $scope.fecharModal();
+
             }
+        )
+        .catch(
+            function(){
+                toastr.error('Falha ao Inserir');
+            }
+            
         )
 
     }
-
 }]);

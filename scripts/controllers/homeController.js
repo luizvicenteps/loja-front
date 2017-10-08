@@ -27,44 +27,17 @@ angular.module("lojaApp").controller("homeCtrl",["$scope","$uibModal","listaProd
         });
     };
 
-    // $scope.editarProduto = function (item){
-    //     //$uibModal.close();
-    //     $uibModal.open({
-    //         templateUrl: "views/editarProduto.html",
-    //         controller: "produtoCtrl",
-    //         size: "bg",
-    //         backdrop: "static",
-    //         resolve: {
-    //             item: function (){
-    //                 return item;
-    //             }
-    //         }
-    //     });
-    // };
-
-    $scope.modalAdicionarProduto = function (item){
+    $scope.modalAdicionarProduto = function (){
         $uibModal.open({
             templateUrl: "views/adicionarProduto.html",
             controller: "produtoCtrl",
-            size: "bg",
+            size: "md",
             backdrop: "static",
             resolve: {
                 item: function (){
-                    return item;
+                    return null;
                 }
             }
         });
     };
-
-    $scope.adicionarProduto = function(item){
-        produtoService.adicionarProduto(item)
-        .then(
-            function(){
-                // alert("chegou aqui");
-                toastr.sucess('Produto Inserido com Sucesso!');
-                $scope.fecharModal();
-            }
-        )
-
-    }
 }]);

@@ -14,3 +14,11 @@
 
 .space-ten {
   padding: 10px 0; }
+
+.img-thumbnail, .thumbnail {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 1px 1px 5px 2px rgba(179, 179, 179, 0.42); }
+
+h4.nomeItem {
+  color: #504f4f;
+  font-weight: 400; }

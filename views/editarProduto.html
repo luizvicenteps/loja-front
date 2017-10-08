@@ -1,48 +1,42 @@
-<div class="modal-content">
-    <div class="modal-header">
+<div class="modal-content col-md-12">
+    <div class="row modal-header">
         <a class="class pull-right" ng-click="fecharModal()"><span class="glyphicon glyphicon-remove"></span></a>
         <h3 class="modal-title">{{item.Nome}}</h3>
+        <h6> Codigo: <span>{{item.Id}}</span></h6>
     </div>
-    <div class="modal-body">
-        <div class="row">
-
+        <div class="row modal-body">
             <div class="col-md-6 product_img">
                 <img ng-src="{{item.ImageUrl}}" class="img-responsive">
-                    <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">Example block-level help text here.</p>
-                      </div>
+                <div class="row col-md-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label For "Url Imagem" class="control-label">Url da Imagem:</label>
+                            <input class="form-control" type="text" ng-model="item.ImageUrl">
+                        </div>
+                    </form>
+                </div>
             </div>
-
             <div class="col-md-6 product_content">
                 <form class="form-horizontal">
-                    
                     <div class="form-group">
-                        <label for="Nome" class="col-sm-2 control-label">Nome</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Nome" placeholder="Nome" ng-model="item.Nome">
-                        </div>
+                        <label for="Nome" class="control-label">Descrição</label>
+                        <input class="form-control" rows="3" ng-model="item.Nome"/>
                     </div>
-           
                     <div class="form-group">
-                        <label for="Nome" class="col-sm-2 control-label">Descrição</label>
-                        <div class="col-sm-10">
-                                <textarea class="form-control" rows="3" ng-model="item.Descricao"></textarea>
-                        </div>
+                        <label for="Descrica" class="control-label">Descrição</label>
+                        <textarea class="form-control" rows="3" ng-model="item.Descricao"></textarea>
                     </div>
-
                     <div class="form-group">
-                        <label for="Nome" class="col-sm-2 control-label">Valor</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="valor" placeholder="Valor" ng-model="item.Valor">
-                        </div>
-                <div class="space-ten"></div>
-                <div class="btn-ground">
-                    <button class="btn btn-primary right" ng-click="editarProduto(item)">Salvar</button>
-                </div>
-
-            </form>
+                        <label for="Nome" class="control-label">Valor</label>
+                        <input type="number" class="form-control" id="valor" placeholder="Valor" ng-model="item.Valor">
+                    </div>
+                </form>
+            </div>
+        </div>
+    <div class="row modal-footer">
+        <div class="btn-ground">
+            <button type="button" class="btn btn-info" ng-click="fecharModal()">Cancelar</button>
+            <button class="btn btn-primary right" ng-click="editarProduto(item)">Salvar</button>
         </div>
     </div>
 </div>

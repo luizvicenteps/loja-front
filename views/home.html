@@ -1,40 +1,48 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#"></a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Loja Virtual</a></li>
-      </ul>
-      <button class="btn btn-danger navbar-btn pull-right" ng-click="modalAdicionarProduto()">Novo produto</button>
-    </div>
-  </nav>
+				<a class="navbar-brand" href="#"></a>
+			</div>
+			<div class="container">
+				<div class="col-md-12">
+					<div class="col-sm-6 col-xs-12">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Loja Virtual - Luiz Vicente Prestes</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<button class="btn btn-danger navbar-btn pull-right" ng-click="modalAdicionarProduto()">Novo produto</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</nav>
 <div class="container" ng-init="buscarProdutos()">
 	<div class="row">
-  		<div class="col-md-3 col-sm-6" ng-repeat="item in produtoModel.produtos">
+  		<div class="col-md-3 col-sm-4 col-xs-12" ng-repeat="item in produtoModel.produtos">
     		<span class="thumbnail">
-      			<img ng-src="{{item.ImageUrl}}" alt="...">
-      			<h4>{{item.Nome}}</h4>
+						<img ng-src="{{item.ImageUrl}}" alt="{{item.ImageUrl}}">
+      			<h4 class="nomeItem">{{item.Nome}}</h4>
       			<div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
+						</div>
       			<p>{{item.Descricao}}</p>
       			<hr class="line">
       			<div class="row">
       				<div class="col-md-12 col-sm-12 text-right">
-      					<p class="price">${{item.Valor}}</p>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-success left" ng-click="detalheProduto(item)"> Detalhes</button>
+								<h5 class="price">R$ {{item.Valor}}</h5>
 							</div>
+
+      				<div class="col-md-12 col-sm-12">
+      					<button class="btn btn-info pull-right" ng-click="detalheProduto(item)"> + Info</button>
+							</div>
+						</span>
 							
       				
-      			</div>
-    		</span>
-  		</div>
-	</div>
+			</div>
+		</div>
 </div>

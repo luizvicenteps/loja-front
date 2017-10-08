@@ -1,0 +1,13 @@
+<div class="modal-content">
+        <div class="modal-header">
+            <a class="class pull-right" ng-click="fecharModal()"><span class="glyphicon glyphicon-remove"></span></a>
+            <h3 class="modal-title">Excluir "{{item.Nome}}"?</h3>
+            <h6> Codigo: <span>{{item.Id}}</span></h6>
+        </div>
+        <div class="modal-body">
+            <div class="row text-center">
+                    <button type="button" class="btn btn-info" ng-click="fecharModal()">Cancelar</button>
+                    <button type="button" class="btn btn-danger" ng-click="removerProduto(item)">Sim! Excluir</button>
+            </div>
+        </div>
+</div>

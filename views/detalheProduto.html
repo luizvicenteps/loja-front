@@ -1,34 +1,31 @@
-    <div class="modal-content">
-        <div class="modal-header">
-            <a class="class pull-right" ng-click="fecharModal()"><span class="glyphicon glyphicon-remove"></span></a>
-            <h3 class="modal-title">{{item.Nome}}</h3>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-md-6 product_img">
-                    <img ng-src="{{item.ImageUrl}}" class="img-responsive">
+<div class="modal-content col-md-12">
+    <div class="row modal-header">
+        <a class="class pull-right" ng-click="fecharModal()"><span class="glyphicon glyphicon-remove"></span></a>
+        <h3 class="modal-title">{{item.Nome}}</h3>
+        <h6> Codigo: <span>{{item.Id}}</span></h6>
+    </div>
+    <div class="row modal-body">
+        <div class="col-md-6 product_img">
+            <img ng-src="{{item.ImageUrl}}" class="img-responsive">
+            <div class="row col-md-12">
+                <form class="form-horizontal">
                     <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Example block-level help text here.</p>
-                          </div>
-                </div>
-                <div class="col-md-6 product_content">
-                    <h4> Codigo: <span>{{item.Id}}</span></h4>
-
-                    <p>{{item.Descricao}}</p>
-                    <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> {{item.Valor}} </h3>
-                    <div class="row">
-
+                            <label class="control-label" for="Url Imagem">Url da Imagem</label>
+                            <input class="form-control" type="text" ng-model="item.ImageUrl" disabled>
                     </div>
-                    <div class="space-ten"></div>
-                    <div class="btn-ground">
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                        <button type="button" class="btn btn-primary" ng-click="modalEditarProduto(item)"> Editar</button>
-                        <button type="button" class="btn btn-danger" ng-click="removerProduto(item)">Remover</button>
-                    </div>
-
-                </div>
+                </form>
             </div>
         </div>
+        <div class="col-md-6 product_content">
+            <h3 class="cost">R$ {{item.Valor}} </h3>
+            <p>{{item.Descricao}}</p>
+        </div>
     </div>
+    <div class="row modal-footer">
+        <div class="btn-ground pull-right">
+            <button type="button" class="btn btn-danger" ng-click="modalRemoverProduto(item)">Excluir</button>
+            <button type="button" class="btn btn-warning" ng-click="modalEditarProduto(item)"> Editar</button>
+            <button type="button" class="btn btn-info" ng-click="fecharModal()">Voltar</button>
+        </div>
+    </div>
+</div>
