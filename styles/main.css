@@ -22,3 +22,19 @@
 h4.nomeItem {
   color: #504f4f;
   font-weight: 400; }
+
+.product_view .modal-dialog {
+  max-width: 800px;
+  width: 100%; }
+
+.pre-cost {
+  text-decoration: line-through;
+  color: #a5a5a5; }
+
+.space-ten {
+  padding: 10px 0; }
+
+.thumbnail a > img, .thumbnail > img {
+  margin-right: auto;
+  margin-left: auto;
+  max-height: 214px; }
