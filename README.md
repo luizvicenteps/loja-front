@@ -1,5 +1,5 @@
 # Loja-Front
-Projeto de Loja Virtual com simples demonstração de CRUD. Foi desenvolvido com Framework AngularJS e consome API dispónível em:
+Projeto de Loja Virtual com simples demonstração de CRUD. Foi desenvolvido com os frameworks AngularJS e Bootstrap 3. A API para consumo desta aplicação está dispónível em:
 
 [https://github.com/luizvicenteps/loja-front](https://github.com/luizvicenteps/loja-front)
 
